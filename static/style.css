@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #3333;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.container {
+    text-align: center;
+}
+
+.align-center {
+    margin: 0 auto;
+}
+
+.home_button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.table-dark {
+    width: 970px;
+    margin: 0 auto;
+}

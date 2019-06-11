@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Display User Data</title>
+</head>
+<body>
+    <a class="home_button" href="/">Home</a>
+    <div class="container">
+        <table class="table table-dark">
+            {% for user in result %}
+            <h1>User {{ user['id'] }}</h1>
+            <tr>
+                <td>Full Name:</td>
+                <td>{{user['first_name']}} {{user['last_name']}}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{user['email']}}</td>
+            </tr>
+            <tr>
+                <td>Created On:</td>
+                <td>{{user['created_at']}}</td>
+            </tr>
+            <tr>
+                <td>Last Updated On:</td>
+                <td>{{user['updated_at']}}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <a href="/users/{{ result[0]['id'] }}/edit">Edit</a> | <a href="/users/{{ result[0]['id'] }}/destroy">Delete</a>                   
+        {% endfor %}
+    </div>
+</body>
+</html>
